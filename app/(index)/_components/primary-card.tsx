@@ -1,10 +1,14 @@
 import Image from "next/image";
 
-export default function PrimaryCard(props: {
+export type PrimaryCardColor = "blue" | "red" | "yellow";
+
+interface PrimaryCardProps {
   title: string;
   imageUrl: string;
-  color?: "blue" | "red" | "yellow";
-}) {
+  color?: PrimaryCardColor;
+}
+
+export default function PrimaryCard(props: PrimaryCardProps) {
   let cssClass = "";
   switch (props.color) {
     case "blue":

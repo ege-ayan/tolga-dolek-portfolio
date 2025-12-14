@@ -1,5 +1,6 @@
 import Image from "next/image";
-import SocialLinks from "@/app/(index)/_components/social-links";
+import SocialLinkItem from "../_components/social-link-item";
+import { socialLinksData } from "../_contents/social-links-data";
 
 export default function ProfileSection() {
   return (
@@ -14,7 +15,11 @@ export default function ProfileSection() {
       <div className="flex flex-col text-white gap-1">
         <div className="font-bold text-xl">Şahan Yağcı</div>
         <div className="text-red-200">daha estetik bir hayat</div>
-        <SocialLinks />
+        <div className="flex gap-2 mt-2">
+          {socialLinksData.map((link, index) => (
+            <SocialLinkItem key={index} src={link.src} alt={link.alt} />
+          ))}
+        </div>
       </div>
     </div>
   );

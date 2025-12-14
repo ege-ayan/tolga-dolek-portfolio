@@ -1,4 +1,6 @@
-import PrimaryCard from "./primary-card";
+import PrimaryCard, {
+  type PrimaryCardColor,
+} from "../_components/primary-card";
 import { primaryCardData } from "../_contents/primary-card-data";
 
 export default function CardsSection() {
@@ -9,7 +11,7 @@ export default function CardsSection() {
           key={index}
           title={card.title}
           imageUrl={card.imageUrl}
-          color={card.color as "blue" | "red" | "yellow" | undefined}
+          color={card.color as PrimaryCardColor | undefined}
         />
       ))}
     </div>
